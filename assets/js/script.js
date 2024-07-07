@@ -4,8 +4,7 @@ async function obtenerIndicadores() {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('No se pudo obtener los indicadores económicos');
-        }
-        
+        }        
         const dailyIndicators = await response.json();
         mostrarIndicadores(dailyIndicators);
     } catch (error) {
@@ -25,12 +24,10 @@ function mostrarIndicadores(dailyIndicators) {
 async function convertirMoneda() {
     const cantidadPesos = parseFloat(document.getElementById('cantidadPesos').value);
     const monedaDestino = document.getElementById('monedaDestino').value;
-
     if (isNaN(cantidadPesos) || cantidadPesos <= 0) {
         document.getElementById('resultado').textContent = 'Por favor, ingrese una cantidad válida de pesos chilenos.';
         return;
     }
-
     try {
         const response = await fetch(`${url}/${monedaDestino}`);
         if (!response.ok) {
@@ -52,19 +49,16 @@ async function convertirMoneda() {
     }
 }
 async function obtenerDatosDolarUltimos10Dias() {
-    const url = 'https://mindicador.cl/api/dolar';
-    
+    const url = 'https://mindicador.cl/api/dolar';    
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('No se pudo obtener los datos del dólar');
-        }
-        
+        }        
         const data = await response.json();
         const ultimos10Dias = data.serie.slice(-10);  // Obtener los últimos 10 días
-
         return ultimos10Dias.map(dato => ({
-            fecha: dato.fecha.substr(0, 10), // Tomar solo la parte de la fecha (YYYY-MM-DD)
+            fecha: dato.fecha.substr(0, 10), // Tomar solo la parte de la fecha
             valor: dato.valor,
         }));
     } catch (error) {
@@ -106,8 +100,8 @@ async function getAndCreateDataToChart() {
     new Chart(ctx, config);
 }
 async function renderGrafica() {
-    await obtenerIndicadores(); // Asegurar que los indicadores se obtengan primero
-    await getAndCreateDataToChart(); // Renderizar el gráfico de dólar
+    await obtenerIndicadores();
+    await getAndCreateDataToChart();
 
     const myChart = document.getElementById('myChart');
     myChart.style.backgroundColor = 'white';
