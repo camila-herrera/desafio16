@@ -1,4 +1,3 @@
-alert('enlace completo')
 const url = 'https://mindicador.cl/api';
 async function obtenerIndicadores() {
     try {
