@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moneda Nacional</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="trabajo">
+        <main id="principal" class="blinking-border">
+            <h1>Conversor de monedas Nacional</h1>
+            <section>
+                <div class="cantidad">
+                    <h2>Pesos CLP</h2>
+                    <input type="number" id="cantidadPesos" min="0" step="1000" placeholder="Ingrese monto">
+                </div>
+                <div class="moneda">
+                    <h3>Moneda a convertir:</h3>
+                    <select id="monedaDestino" >
+                        <option value="" disabled selected>Seleccione una moneda</option>
+                        <option value="uf">Unidad de Fomento (UF)</option>
+                        <option value="dolar">Dólar Observado</option>
+                        <option value="dolar_intercambio">Dólar Acuerdo</option>
+                        <option value="euro">Euro</option>
+                        <option value="utm">Unidad Tributaria Mensual (UTM)</option>
+                    </select>
+                </div>
+                <div class="total">
+                    <button id="buscar">Buscar</button>
+                    <p id="resultado">Resultado: </p>
+                </div>
+            </section>
+        </main >
+        <main class="grafico">
+            <h2>Gráfico Dólar últimos 10 días</h2>
+            <canvas id="myChart"></canvas>
+        </main>
+    </nav>
+    <footer>
+        <div class="carousel">
+            <div class="item" id="UF"></div>
+            <div class="item" id="DolarO"></div>
+            <div class="item" id="DolarA"></div>
+            <div class="item" id="Euro"></div>
+            <div class="item" id="IPC"></div>
+            <div class="item" id="UTM"></div>
+            <div class="item" id="IVP"></div>
+            <div class="item" id="Imacec"></div>
+        </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,129 @@
+body{
+    background-color: #212529;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;    
+}
+.trabajo{
+    display: flex;
+    flex-direction: row;
+
+    gap: 10px;
+    width: 100vw;
+    height: 85vh;
+    justify-content: space-evenly;
+}
+#principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#principal h1{
+    text-align: center;
+    border-bottom: 3px solid #1D3E47;
+    border-top: 3px solid #1D3E47;
+    padding: 10px;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #6C757D;
+    justify-items: center;
+    border-radius: 3%;
+    width: 250px;
+    height: 280px;
+}
+.cantidad{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: 5px;
+}
+.cantidad h2{
+    margin: 5px;
+}
+.cantidad input{
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5%;
+    border: none;
+    color: #6C757D;
+}
+.moneda{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: 5px;
+}
+.moneda h3{
+    margin: 5px;
+}
+.moneda select{
+    width: 200px;
+    height: 30px;
+    border-radius: 5%;
+    text-align: center;
+    color: #6C757D;
+}
+.total{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: 5px;
+}
+.total p{
+    margin: 5px;
+}
+.total button{
+    background-color: #0DCAF0;
+    border: none;
+    color: white;
+    border-radius: 5%;
+    font-family: "Roboto", sans-serif;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+.grafico{
+    width: 400px;
+    height: 300px;
+    border: 3px solid #1D3E47;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+footer {
+    background-color: none;
+    padding: 20px;
+    text-align: center;
+}
+.carousel {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    width: 80%;
+}
+.item {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 20px;
+    background-color: #212529;
+    border-radius: 5px;
+    min-width: 150px;
+    animation: carouselMove 20s linear infinite;
+}
+@keyframes carouselMove {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+
